@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Бекзат & Дана — Үйлену Той</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Literaturnaya';
+      src: url('fonts/Literaturnaya.ttf') format('truetype');
+    }
+
     body { margin: 0; font-family: Georgia, serif; }
+
     .section1 {
-      background: url('https://sotni.ru/wp-content/uploads/2023/08/svadebnyi-fon-559.webp') center/cover no-repeat;
+      background: url('pics/1.png') center/cover no-repeat;
       height: 100vh;
       position: relative;
       color: white;
@@ -19,6 +25,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .overlay {
       position: absolute;
       top: 0; left: 0;
@@ -26,52 +33,73 @@
       background-color: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
+
     .section1-content {
       z-index: 2;
     }
+
     .section1 h1 { font-size: 28px; margin: 0; }
     .section1 h2 { font-size: 40px; margin: 10px 0; }
     .section1 h3 { font-size: 26px; font-weight: normal; margin: 0; }
 
     .countdown {
       margin-top: 40px;
-      font-size: 24px;
       display: flex;
       gap: 10px;
       justify-content: center;
       font-family: 'Cormorant', serif;
-      color: #fefcf7;
+      color: #333;
+      flex-wrap: wrap;
     }
+
     .countdown div {
       background: rgba(255, 248, 240, 0.8);
       color: #333;
-      padding: 10px 20px;
-      border-radius: 8px;
-      min-width: 80px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      min-width: 60px;
+      text-align: center;
     }
 
     .section2 {
       background: #fefcf7;
       padding: 60px 20px;
       text-align: center;
+      font-family: 'Literaturnaya', serif;
     }
+
     .section2 p {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: bold;
+      max-width: 600px;
+      margin: 0 auto;
     }
+
     .line {
       width: 100px;
       height: 2px;
       background: black;
       margin: 20px auto;
     }
+
     .icon-text {
-      font-size: 36px;
+      font-size: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .icon-text img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .icon-text span.bold {
+      font-weight: bold;
     }
 
     .section3 {
@@ -81,23 +109,32 @@
       padding: 60px 20px;
       text-align: center;
     }
+
     .section3 h2 { font-size: 28px; margin: 0; }
     .section3 h3 { margin-top: 10px; font-size: 24px; }
 
     .section4 {
       background: #fefcf7;
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center;
+      font-family: 'Literaturnaya', serif;
     }
+
     .section4 input[type="text"] {
       padding: 10px;
-      width: 300px;
-      margin: 10px 0;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      display: block;
     }
+
     .section4 label {
       display: block;
-      margin-top: 10px;
+      margin: 10px auto;
+      max-width: 300px;
+      text-align: left;
     }
+
     .section4 button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -109,9 +146,10 @@
     }
 
     .section5 {
-      height: 500px;
+      height: 400px;
       width: 100%;
     }
+
     iframe {
       width: 100%;
       height: 100%;
@@ -133,8 +171,8 @@
   <section class="section2">
     <p>Сіз(дер)ді баламыз Бекзатпен келініміз Дананың үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
     <div class="line"></div>
-    <div class="icon-text">📅 19 шілде 2025 жыл<br>Сенбі, 17:00</div>
-    <div class="icon-text">📍 Банкет залы Samruk 777<br>Астана қ., Беімбет Майлин к., 20/10</div>
+    <div class="icon-text"><img src="pics/calendar.jpg" alt="calendar"><span class="bold">19 шілде 2025 жыл</span><br>Сенбі, 17:00</div>
+    <div class="icon-text"><img src="pics/location.jpg" alt="location"><span class="bold">Банкет залы Samruk 777</span><br>Астана қ., Беімбет Майлин к., 20/10</div>
   </section>
 
   <section class="section3">
@@ -143,7 +181,7 @@
   </section>
 
   <section class="section4">
-    <p style="font-size: 28px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
+    <p style="font-size: 24px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
     <input type="text" id="name" placeholder="Аты-жөніңіз">
     <input type="text" id="guests" placeholder="Неше адам">
     <label><input type="radio" name="status" value="Қатысамыз"> Қатысамыз</label>
@@ -152,19 +190,10 @@
   </section>
 
   <section class="section5">
-   <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.2619750385993!2d71.38729767624313!3d51.13590227175551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42458144c1abdd05%3A0x74853e08f6b101f2!2zU2FtcnVrIDc3Nywg0JDQu9C80LDRhdC-0LzQutCwLCDQkNCy0YHQutC40LkgMTAwMDAw!5e0!3m2!1sru!2skz!4v1714414523776!5m2!1sru!2skz"
-    width="100%"
-    height="400"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
+    <iframe src="https://go.2gis.com/FJcDh"></iframe>
   </section>
 
   <script>
-    // Countdown
     const targetDate = new Date("2025-07-19T17:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
 
@@ -188,7 +217,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Send response via WhatsApp (or fallback mailto)
     function sendResponse() {
       const name = document.getElementById("name").value;
       const guests = document.getElementById("guests").value;
