@@ -1,48 +1,195 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бекзат пен Дананың үйлену тойына шақыру</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бекзат & Дана — Үйлену Той</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, serif; }
+    .section1 {
+      background: url('https://sotni.ru/wp-content/uploads/2023/08/svadebnyi-fon-559.webp') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      color: white;
+      text-align: center;
+      font-family: 'Cormorant', serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .section1-content {
+      z-index: 2;
+    }
+    .section1 h1 { font-size: 28px; margin: 0; }
+    .section1 h2 { font-size: 40px; margin: 10px 0; }
+    .section1 h3 { font-size: 26px; font-weight: normal; margin: 0; }
+
+    .countdown {
+      margin-top: 40px;
+      font-size: 24px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      font-family: 'Cormorant', serif;
+      color: #fefcf7;
+    }
+    .countdown div {
+      background: rgba(255, 248, 240, 0.8);
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      min-width: 80px;
+    }
+
+    .section2 {
+      background: #fefcf7;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section2 p {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .line {
+      width: 100px;
+      height: 2px;
+      background: black;
+      margin: 20px auto;
+    }
+    .icon-text {
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .section3 {
+      background: url('https://i.pinimg.com/originals/48/39/f9/4839f9b37877d41b4fd7927c1f7df7db.jpg') center/cover no-repeat;
+      color: white;
+      font-family: 'Cormorant', serif;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section3 h2 { font-size: 28px; margin: 0; }
+    .section3 h3 { margin-top: 10px; font-size: 24px; }
+
+    .section4 {
+      background: #fefcf7;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section4 input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      margin: 10px 0;
+    }
+    .section4 label {
+      display: block;
+      margin-top: 10px;
+    }
+    .section4 button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #d4bfa3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .section5 {
+      height: 500px;
+      width: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Бекзат пен Дананың үйлену тойына шақыру</h1>
-        <p>Той иелері: Ардақ пен Тамара</p>
-    </header>
+  <section class="section1">
+    <div class="overlay"></div>
+    <div class="section1-content">
+      <h1>Үйлену тойға шақыру</h1>
+      <h2>Бекзат & Дана</h2>
+      <h3>Біз сіздермен бұл салтанатты бөлісуге қуаныштымыз</h3>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </section>
 
-    <section id="countdown">
-        <h2>Той басталуына дейін:</h2>
-        <div id="timer"></div>
-    </section>
+  <section class="section2">
+    <p>Сіз(дер)ді баламыз Бекзатпен келініміз Дананың үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+    <div class="line"></div>
+    <div class="icon-text">📅 19 шілде 2025 жыл<br>Сенбі, 17:00</div>
+    <div class="icon-text">📍 Банкет залы Samruk 777<br>Астана қ., Беімбет Майлин к., 20/10</div>
+  </section>
 
-    <section id="location">
-        <h2>Той өтетін орны</h2>
-        <iframe 
-            src="https://www.google.com/maps/embed?...тут будет ссылка на ресторан..." 
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-        <div class="map-links">
-            <a href="https://2gis.kz/" target="_blank">2GIS картасы</a> |
-            <a href="https://yandex.kz/maps" target="_blank">Яндекс картасы</a>
-        </div>
-    </section>
+  <section class="section3">
+    <h2>Той иелері</h2>
+    <h3>Ардақ - Тамара</h3>
+  </section>
 
-    <section id="rsvp">
-        <h2>Сіз келе аласыз ба?</h2>
-        <form id="rsvp-form">
-            <input type="text" id="name" placeholder="Атыңыз" required>
-            <select id="attendance" required>
-                <option value="">Таңдаңыз</option>
-                <option value="Иә">Иә, келемін</option>
-                <option value="Жоқ">Келе алмаймын</option>
-            </select>
-            <button type="submit">Жіберу</button>
-        </form>
-        <div id="thank-you" style="display:none;">Рақмет!</div>
-    </section>
+  <section class="section4">
+    <p style="font-size: 28px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
+    <input type="text" id="name" placeholder="Аты-жөніңіз">
+    <input type="text" id="guests" placeholder="Неше адам">
+    <label><input type="radio" name="status" value="Қатысамыз"> Қатысамыз</label>
+    <label><input type="radio" name="status" value="Келе алмаймыз"> Келе алмаймыз</label>
+    <button onclick="sendResponse()">Жіберу</button>
+  </section>
 
-    <script src="script.js"></script>
+  <section class="section5">
+    <iframe src="https://go.2gis.com/FJcDh"></iframe>
+  </section>
+
+  <script>
+    // Countdown
+    const targetDate = new Date("2025-07-19T17:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `
+        <div>${days} күн</div>
+        <div>${hours} сағ</div>
+        <div>${minutes} мин</div>
+        <div>${seconds} сек</div>
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Send response via WhatsApp (or fallback mailto)
+    function sendResponse() {
+      const name = document.getElementById("name").value;
+      const guests = document.getElementById("guests").value;
+      const status = document.querySelector('input[name="status"]:checked')?.value;
+      if (!name || !guests || !status) return alert("Барлық өрістерді толтырыңыз");
+      const message = `Сәлем! Менің атым: ${name}%0AҚонақ саны: ${guests}%0AҚатысу күйі: ${status}`;
+      const url = `https://wa.me/77006962099?text=${message}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
