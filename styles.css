@@ -1,52 +1,173 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f8f0f8;
-    color: #333;
+@font-face {
+    font-family: "classicaone"; 
+    src: url("fonts/classicaone.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    font-family: "kzbalmoral_regular"; 
+    src: url("fonts/kzbalmoral_regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    font-family: "KZKlementina-Regular"; 
+    src: url("fonts/KZKlementina-Regular.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+
+  body { margin: 0; font-family: Georgia, serif; }
+
+  .section1 {
+    background: url('pics/new_1.jpg') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+    color: rgb(63, 51, 51);
     text-align: center;
-}
-
-header {
-    background: #dca3c2;
-    color: white;
-    padding: 20px 0;
-}
-
-section {
-    margin: 20px;
-}
-
-#timer {
-    font-size: 2em;
-    margin: 10px 0;
-}
-
-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+
+  .section1-content {
+    z-index: 2;
+    font-family: 'KZKlementina-Regular';
+  }
+
+  .section1-name {
+    z-index: 2;
+    font-family: 'classicaone';
+  }
+
+  .section1 h1 { font-size: 28px; margin: 0; }
+  .section1 h2 { font-size: 40px; margin: 10px 0; font-weight: bold; }
+  .section1 h3 { font-size: 26px; font-weight: normal; margin: 0; }
+
+  .countdown {
+    margin-top: 40px;
+    display: flex;
     gap: 10px;
-}
+    justify-content: center;
+    font-family: 'kzbalmoral_regular', serif;
+    color: #333;
+    text-align: center;
+    flex-wrap: wrap;
+  }
 
-input, select, button {
+  .countdown div {
+    background: rgba(255, 248, 240, 0.8);
+    color: #333;
+    padding: 15px 15px 10px 15px;
+    border-radius: 10px;
+    font-size: 46px;
+    min-width: 60px;
+    height: 30px;
+    text-align: center;
+  }
+
+  .section2 {
+    background: #fefcf7;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'kzbalmoral_regular', serif;
+  }
+
+  .section2 p {
+    font-size: 24px;
+    font-weight: bold;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .line {
+    width: 100px;
+    height: 2px;
+    background: black;
+    margin: 20px auto;
+  }
+
+  .icon-text {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .icon-text img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon-text span.bold {
+    font-weight: bold;
+  }
+
+  .section3 {
+    background: url('https://i.pinimg.com/originals/48/39/f9/4839f9b37877d41b4fd7927c1f7df7db.jpg') center/cover no-repeat;
+    color: white;
+    font-family: 'kzbalmoral_regular', serif;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .section3 h2 { font-size: 28px; margin: 0; }
+  .section3 h3 { margin-top: 10px; font-size: 24px; }
+
+  .section4 {
+    background: #fefcf7;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Madetheartistscript', serif;
+  }
+
+  .section4 input[type="text"] {
     padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
 
-button {
-    background-color: #dca3c2;
+  .section4 label {
+    display: block;
+    margin: 10px auto;
+    max-width: 300px;
+    text-align: left;
+  }
+
+  .section4 button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #d4bfa3;
     color: white;
     border: none;
     cursor: pointer;
-}
+    font-size: 16px;
+  }
 
-.map-links a {
-    display: inline-block;
-    margin: 10px;
-    color: #dca3c2;
-    text-decoration: none;
-    font-weight: bold;
-}
+  .section5 {
+    height: 400px;
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
