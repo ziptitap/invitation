@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бекзат пен Дананың үйлену тойына шақыру</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Бекзат пен Дананың үйлену тойына шақыру</h1>
+        <p>Той иелері: Ардақ пен Тамара</p>
+    </header>
+
+    <section id="countdown">
+        <h2>Той басталуына дейін:</h2>
+        <div id="timer"></div>
+    </section>
+
+    <section id="location">
+        <h2>Той өтетін орны</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?...тут будет ссылка на ресторан..." 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+        <div class="map-links">
+            <a href="https://2gis.kz/" target="_blank">2GIS картасы</a> |
+            <a href="https://yandex.kz/maps" target="_blank">Яндекс картасы</a>
+        </div>
+    </section>
+
+    <section id="rsvp">
+        <h2>Сіз келе аласыз ба?</h2>
+        <form id="rsvp-form">
+            <input type="text" id="name" placeholder="Атыңыз" required>
+            <select id="attendance" required>
+                <option value="">Таңдаңыз</option>
+                <option value="Иә">Иә, келемін</option>
+                <option value="Жоқ">Келе алмаймын</option>
+            </select>
+            <button type="submit">Жіберу</button>
+        </form>
+        <div id="thank-you" style="display:none;">Рақмет!</div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
