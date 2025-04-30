@@ -19,12 +19,47 @@
     font-weight: normal; 
   } 
 
+  @font-face {
+    font-family: "KZ_Ariston"; 
+    src: url("fonts/KZ_Ariston.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    font-family: "KZ_Jikharev_"; 
+    src: url("fonts/KZ_Jikharev_.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    font-family: "_Miama_Nueva_kz"; 
+    src: url("fonts/_Miama_Nueva_kz.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    font-family: "Kz_DessertScript_kz"; 
+    src: url("fonts/Kz_DessertScript_kz.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    font-family: "Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz"; 
+    src: url("fonts/Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
 
   body { margin: 0; font-family: Georgia, serif; }
 
   .section1 {
-    background: url('pics/new_1.jpg') center/cover no-repeat;
-    height: 100vh;
+    background: url('pics/new_3.jpg') center/cover no-repeat;
+    height: 60vh;
     position: relative;
     color: rgb(63, 51, 51);
     text-align: center;
@@ -38,13 +73,13 @@
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.09);
     z-index: 1;
   }
 
   .section1-content {
     z-index: 2;
-    font-family: 'KZKlementina-Regular';
+    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz'
   }
 
   .section1-name {
@@ -52,9 +87,9 @@
     font-family: 'classicaone';
   }
 
-  .section1 h1 { font-size: 28px; margin: 0; }
-  .section1 h2 { font-size: 40px; margin: 10px 0; font-weight: bold; }
-  .section1 h3 { font-size: 26px; font-weight: normal; margin: 0; }
+  .section1 h1 { font-size: 24px; margin: 20; font-weight: normal; }
+  .section1 h2 { font-size: 40px; margin: 20px; font-weight: bolder; }
+  .section1 h3 { font-size: 24px; margin: 10px 0px; font-weight: normal;}
 
   .countdown {
     margin-top: 40px;
@@ -68,7 +103,7 @@
   }
 
   .countdown div {
-    background: rgba(255, 248, 240, 0.8);
+    background: rgba(245, 241, 236, 0.5);
     color: #333;
     padding: 15px 15px 10px 15px;
     border-radius: 10px;
@@ -81,50 +116,60 @@
   .section2 {
     background: #fefcf7;
     padding: 60px 20px;
+    min-height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* опустит текст ближе к середине */
     text-align: center;
     font-family: serif;
+    color: rgb(63, 51, 51);
+  }
+  
+  .section2 .line {
+    width: 40%;
+    height: 2px;
+    background-color: rgb(63, 51, 51);
+    margin: 40px auto;
   }
 
   .section2 p {
-    font-size: 24px;
-    font-weight: bold;
-    max-width: 600px;
+    font-size: 20px;
+    font-weight: lighter;
+    max-width: 450px;
     margin: 0 auto;
     font-family: 'KZKlementina-Regular';
   }
 
-  .line {
-    width: 100px;
-    height: 2px;
-    background: black;
-    margin: 20px auto;
-  }
-
+  .section2 h1 { font-size: 24px; margin: 20; font-weight: bold; font-family: 'KZKlementina-Regular';}
+  
   .info-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Выравниваем всё влево */
   }
   
   .info-block {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Центрируем иконку по высоте двух строк */
     gap: 10px;
   }
   
   .info-block img {
-    width: 24px;
-    height: 24px;
-    margin-top: 4px; /* немного выровнять иконку по центру текста */
+    width: 28px;
+    height: 28px;
+    margin-top: 0; /* Убираем смещение */
+    align-self: center; /* Центр по высоте */
   }
   
   .info-text {
     display: flex;
     flex-direction: column;
     line-height: 1.4;
+    font-size: 20px;
+    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';
+    text-align: left; /* Выравнивание текста по левому краю */
   }
   
 
@@ -148,8 +193,8 @@
   }
 
   .section3 {
-    background: url('pics/new_2.jpg') center/cover no-repeat;
-    height: 100vh;
+    background: url('pics/new_4.jpg') center/cover no-repeat;
+    height: 25vh;
     position: relative;
     color: rgb(63, 51, 51);
     text-align: center;
@@ -157,25 +202,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
 
-  .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.15);
-    z-index: 1;
   }
 
 
-  .section3 h2 { font-size: 28px; margin: 0; }
-  .section3 h3 { margin-top: 10px; font-size: 24px; }
+  .section3 h2 { font-size: 36px; margin: 0;  font-family: 'KZ_Ariston';}
+  .section3 h3 { margin-top: 10px; font-size: 24px;  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';}
 
   .section4 {
     background: #fefcf7;
     padding: 40px 20px;
     text-align: center;
-    font-family: 'Madetheartistscript', serif;
+    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
+    color: rgb(63, 51, 51);
   }
 
   .section4 input[type="text"] {
@@ -184,23 +223,25 @@
     max-width: 300px;
     margin: 10px auto;
     display: block;
+    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
   }
 
   .section4 label {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
     max-width: 300px;
     text-align: left;
   }
 
   .section4 button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 20px;
-    background: #d4bfa3;
+    background: rgb(95, 78, 78);
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
   }
 
   .section5 {

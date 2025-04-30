@@ -1,74 +1,94 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Бекзат & Дана — Үйлену Той</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    
+  </style>
 </head>
 <body>
   <section class="section1">
     <div class="overlay"></div>
     <div class="section1-content">
-      <h3>Үйлену тойға шақыру</h3>
+      <h1 style="margin-top: 40px;">Үйлену тойға шақыру</h1>
       <h2 class="section1-name">Бекзат & Дана</h2>
-      <h3>Біз сіздермен бұл салтанатты бөлісуге қуаныштымыз</h3>
+      <h3 style="margin-bottom: 20px;">19.07.2025</h3>
+      <h3>Астана</h3>
       <div class="countdown" id="countdown"></div>
     </div>
   </section>
 
   <section class="section2">
-    <p>Сіздерді баламыз Бекзатпен келініміз Дананың үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+    <h1>Құрметті қонақтар!</h1>
+    <p>Сіздерді баламыз Бекзат пен келініміз Дананың үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
     <div class="line"></div>
-
     <div class="info-section">
       <div class="info-block">
-        <img src="pics/calendar.jpg" alt="calendar icon" />
+        <img src="pics/calendar.png" alt="calendar icon" />
         <div class="info-text">
           <div><strong>19 шілде 2025 жыл</strong></div>
           <div>Сенбі, 17:00</div>
         </div>
       </div>
-    
       <div class="info-block">
-        <img src="pics/location.jpg" alt="location icon" />
+        <img src="pics/location.png" alt="location icon" />
         <div class="info-text">
           <div><strong>Банкет залы Samruk 777</strong></div>
-          <div>Астана қ., Бейімбет Майлин к., 20/10</div>
+          <div>Бейімбет Майлин к., 20/10</div>
         </div>
       </div>
     </div>
- </section>
-
- <section class="section3">
-  <div class="overlay"></div>
-  <div class="section3-content">
-    <h3>Той иелері</h3>
-    <h2 class="section3-name">Ардақ - Тамара</h2>
-  </div>
-</section>
-
-  <section class="section4">
-    <p style="font-size: 24px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
-    <input type="text" id="name" placeholder="Аты-жөніңіз">
-    <input type="text" id="guests" placeholder="Неше адам">
-    <label><input type="radio" name="status" value="Қатысамыз"> Қатысамыз</label>
-    <label><input type="radio" name="status" value="Келе алмаймыз"> Келе алмаймыз</label>
-    <button onclick="sendResponse()">Жіберу</button>
   </section>
 
-  <section class="section5">
-    <iframe
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2923.2620217093693!2d71.389872!3d51.135899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42458144c1abdd05%3A0x74853e08f6b101f2!2sSamruk!5e0!3m2!1sru!2skz!4v1714414523776!5m2!1sru!2skz"
-  width="100%"
-  height="400"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-></iframe>
+  <section class="section3">
+    <div class="overlay"></div>
+    <div class="section3-content">
+      <h3>Той иелері</h3>
+      <h2 class="section3-name">Ардақ - Тамара</h2>
+    </div>
+  </section>
 
-   </section>
+  <section class="section4" style="font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';">
+    <p style="font-size: 22px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
+    <form id="rsvp-form">
+      <input type="text" name="entry.763296163" placeholder="Аты-жөніңіз" required />
+      <input type="text" name="entry.1810413915" placeholder="Неше адам" required />
+      <label><input type="radio" name="entry.1818277347" value="Қатысамыз" required /> Қатысамыз</label>
+      <label><input type="radio" name="entry.1818277347" value="Келе алмаймыз" /> Келе алмаймыз</label>
+      <button type="submit">Жіберу</button>
+    </form>
+    <p id="confirmation" style="color: green; display: none;">Рақмет! Жауабыңыз қабылданды.</p>
+  </section>
+  
+
+
+<!-- Подключение скрипта Яндекс.Карт -->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+<section class="section5">
+  <!-- Контейнер карты -->
+  <div id="map" style="width: 100%; height: 400px;"></div>
+</section>
+
+<script>
+  ymaps.ready(function () {
+    const myMap = new ymaps.Map('map', {
+      center: [51.147174, 71.482848], // координаты Астаны, можешь заменить на точные координаты зала
+      zoom: 16
+    });
+
+    const myPlacemark = new ymaps.Placemark([51.147174, 71.482848], {
+      hintContent: 'Банкет залы Samruk 777',
+      balloonContent: 'Бейімбет Майлин к., 20/10'
+    });
+
+    myMap.geoObjects.add(myPlacemark);
+  });
+</script>
+
 
   <script>
     const targetDate = new Date("2025-07-19T17:00:00").getTime();
@@ -98,11 +118,40 @@
       const name = document.getElementById("name").value;
       const guests = document.getElementById("guests").value;
       const status = document.querySelector('input[name="status"]:checked')?.value;
-      if (!name || !guests || !status) return alert("Барлық өрістерді толтырыңыз");
-      const message = `Сәлем! Менің атым: ${name}%0AҚонақ саны: ${guests}%0AҚатысу күйі: ${status}`;
-      const url = `https://wa.me/77006962099?text=${message}`;
-      window.open(url, '_blank');
+      if (!name || !guests || !status) {
+        alert("Барлық өрістерді толтырыңыз");
+        return;
+      }
+
+      fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, guests, status })
+      });
+
+      document.getElementById("confirmation").style.display = "block";
+      document.getElementById("name").value = "";
+      document.getElementById("guests").value = "";
+      document.querySelectorAll('input[name="status"]').forEach(el => el.checked = false);
     }
+
+
+    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSefRhWLKjDB2-jTac3B1X4xHr9clqQq41_bGzKb0lD19RxCtA/formResponse', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: data
+    }).then(() => {
+      form.style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    }).catch((error) => {
+      alert('Қате орын алды. Қайтадан көріңіз.');
+    });
+  });
   </script>
 </body>
 </html>
