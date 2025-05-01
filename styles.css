@@ -1,255 +1,299 @@
 @font-face {
-    font-family: "classicaone"; 
-    src: url("fonts/classicaone.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+  font-family: "classicaone"; 
+  src: url("fonts/classicaone.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "kzbalmoral_regular"; 
-    src: url("fonts/kzbalmoral_regular.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "kzbalmoral_regular"; 
+  src: url("fonts/kzbalmoral_regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "KZKlementina-Regular"; 
-    src: url("fonts/KZKlementina-Regular.otf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "KZKlementina-Regular"; 
+  src: url("fonts/KZKlementina-Regular.otf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "KZ_Ariston"; 
-    src: url("fonts/KZ_Ariston.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "KZ_Ariston"; 
+  src: url("fonts/KZ_Ariston.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "KZ_Jikharev_"; 
-    src: url("fonts/KZ_Jikharev_.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "KZ_Jikharev_"; 
+  src: url("fonts/KZ_Jikharev_.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "_Miama_Nueva_kz"; 
-    src: url("fonts/_Miama_Nueva_kz.otf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "_Miama_Nueva_kz"; 
+  src: url("fonts/_Miama_Nueva_kz.otf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "Kz_DessertScript_kz"; 
-    src: url("fonts/Kz_DessertScript_kz.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "Kz_DessertScript_kz"; 
+  src: url("fonts/Kz_DessertScript_kz.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
-  @font-face {
-    font-family: "Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz"; 
-    src: url("fonts/Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz.otf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-  } 
+@font-face {
+  font-family: "Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz"; 
+  src: url("fonts/Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz.otf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
 
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  scroll-behavior: smooth;
+}
 
-  body { margin: 0; font-family: Georgia, serif; }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-  .section1 {
-    background: url('pics/new_1.jpg') center/cover no-repeat;
-    height: 90vh;
-    color: rgb(63, 51, 51);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.09);
-    z-index: 1;
-  }
+.music-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  font-family: 'Georgia';
+}
 
-  .section1-content {
-    z-index: 2;
-    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz'
-  }
+.section1 {
+  background: url('pics/pic_11.png') center/cover no-repeat;
+  height: 90vh;
+  color:rgb(63, 51, 51);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-  .section1-name {
-    z-index: 2;
-    font-family: 'classicaone';
-  }
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.09);
+  z-index: 1;
+}
 
-  .section1 h1 { font-size: 24px; margin: 20; font-weight: normal; }
-  .section1 h2 { font-size: 40px; margin: 20px; font-weight: bolder; }
-  .section1 h3 { font-size: 24px; margin: 10px 0px; font-weight: normal;}
+.section1-content {
+  z-index: 2;
+  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';
+}
 
-  .countdown {
-    margin-top: 40px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    font-family: 'kzbalmoral_regular', serif;
-    color: #333;
-    text-align: center;
-    flex-wrap: wrap;
-  }
+.section1-name {
+  z-index: 2;
+  font-family: 'classicaone';
+}
 
-  .countdown div {
-    background: rgba(245, 241, 236, 0.5);
-    color: #333;
-    padding: 15px 15px 10px 15px;
-    border-radius: 10px;
-    font-size: 46px;
-    min-width: 60px;
-    height: 30px;
-    text-align: center;
-  }
+.section1 h1 { font-size: 24px; margin: 20; font-weight: normal; }
+.section1 h2 { font-size: 40px; margin: 20px; font-weight: bolder; }
+.section1 h3 { font-size: 24px; margin: 10px 0px; font-weight: normal;}
 
-  .section2 {
-    background: #fefcf7;
-    padding: 60px 20px;
-    min-height: 35vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* опустит текст ближе к середине */
-    text-align: center;
-    font-family: serif;
-    color: rgb(63, 51, 51);
-  }
-  
-  .section2 .line {
-    width: 40%;
-    height: 2px;
-    background-color: rgb(63, 51, 51);
-    margin: 40px auto;
-  }
+.countdown {
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  font-family: 'kzbalmoral_regular', serif;
+  color:  rgb(63, 51, 51);
+  text-align: center;
+  flex-wrap: wrap;
+}
 
-  .section2 p {
-    font-size: 20px;
-    font-weight: lighter;
-    max-width: 450px;
-    margin: 0 auto;
-    font-family: 'KZKlementina-Regular';
-  }
+.countdown div {
+  background: rgba(245, 246, 244, 0.5);
+  color:rgb(63, 51, 51);
+  padding: 15px 15px 10px 15px;
+  border-radius: 10px;
+  font-size: 46px;
+  min-width: 60px;
+  height: 30px;
+  text-align: center;
+}
 
-  .section2 h1 { font-size: 24px; margin: 20; font-weight: bold; font-family: 'KZKlementina-Regular';}
-  
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start; /* Выравниваем всё влево */
-  }
-  
-  .info-block {
-    display: flex;
-    align-items: center; /* Центрируем иконку по высоте двух строк */
-    gap: 10px;
-  }
-  
-  .info-block img {
-    width: 28px;
-    height: 28px;
-    margin-top: 0; /* Убираем смещение */
-    align-self: center; /* Центр по высоте */
-  }
-  
-  .info-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.4;
-    font-size: 20px;
-    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';
-    text-align: left; /* Выравнивание текста по левому краю */
-  }
-  
+.section2 {
+  background: #f0f0ed;
+  padding: 60px 20px;
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: serif;
+  color: rgb(63, 51, 51);
+}
 
-  .icon-text {
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-    flex-wrap: wrap;
-  }
+.section2 .line {
+  width: 40%;
+  height: 2px;
+  background-color: rgb(63, 51, 51);
+  margin: 40px auto;
+}
 
-  .icon-text img {
-    width: 24px;
-    height: 24px;
-  }
+.section2 p {
+  font-size: 20px;
+  font-weight: lighter;
+  max-width: 450px;
+  margin: 0 auto;
+  font-family: 'KZKlementina-Regular';
+}
 
-  .icon-text span.bold {
-    font-weight: bold;
-  }
+.section2 h1 { font-size: 24px; margin: 20; font-weight: bold; font-family: 'KZKlementina-Regular';}
 
-  .section3 {
-    background: url('pics/new_4.jpg') center/cover no-repeat;
-    height: 25vh;
-    position: relative;
-    color: rgb(63, 51, 51);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
 
-  }
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.info-block img {
+  width: 28px;
+  height: 28px;
+  margin-top: 0;
+  align-self: center;
+}
 
-  .section3 h2 { font-size: 36px; margin: 0;  font-family: 'KZ_Ariston';}
-  .section3 h3 { margin-top: 10px; font-size: 24px;  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';}
+.info-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  font-size: 20px;
+  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';
+  text-align: left;
+}
 
-  .section4 {
-    background: #fefcf7;
-    padding: 40px 20px;
-    text-align: center;
-    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
-    color: rgb(63, 51, 51);
-  }
+.icon-text {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
 
-  .section4 input[type="text"] {
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
-    display: block;
-    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
-  }
+.icon-text img {
+  width: 24px;
+  height: 24px;
+}
 
-  .section4 label {
-    display: block;
-    margin: 20px auto;
-    max-width: 300px;
-    text-align: left;
-  }
+.icon-text span.bold {
+  font-weight: bold;
+}
 
-  .section4 button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: rgb(95, 78, 78);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
-  }
+.section3 {
+  background: url('pics/pic_10.jpg') center/cover no-repeat;
+  height: 50vh;
+  position: relative;
+  color: rgb(63, 51, 51);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .section5 {
-    height: 400px;
-    width: 100%;
-  }
+.section3 h2 { font-size: 36px; margin: 0;  font-family: 'KZ_Ariston';}
+.section3 h3 { margin-top: 10px; font-size: 24px;  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';}
 
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+.section3-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section3-name {
+  margin-bottom: 10px; /* Отступ между именем и линией */
+}
+
+.line-image {
+  width: 250px; /* или auto, если размер уже подходящий */
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+.section4 {
+  background: #f0f0ed;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
+  color: rgb(63, 51, 51);
+}
+
+.section4 input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
+  font-size: 16px;
+  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
+}
+
+.section4 label {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.section4 button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: rgb(109, 116, 101);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
+}
+
+.section5 {
+  height: 400px;
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

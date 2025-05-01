@@ -10,34 +10,35 @@
   </style>
 </head>
 <body>
+
   <section class="section1">
     <div class="overlay"></div>
     <div class="section1-content">
-      <h1 style="margin-top: 40px;">Үйлену тойға шақыру</h1>
-      <h2 class="section1-name">Бекзат & Дана</h2>
-      <h3 style="margin-bottom: 20px;">19.07.2025</h3>
-      <h3>Астана</h3>
-      <div class="countdown" id="countdown"></div>
+      <h1 class="fade-in" style="margin-top: 40px;">Үйлену тойға шақыру</h1>
+      <h2 class="fade-in section1-name">Бекзат & Дана</h2>
+      <h3 class="fade-in" style="margin-bottom: 20px;">19.07.2025</h3>
+      <h3 class="fade-in">Астана</h3>
+      <div class="fade-in countdown" id="countdown"></div>
     </div>
   </section>
 
   <section class="section2">
-    <h1>Құрметті қонақтар!</h1>
-    <p>Сіздерді баламыз Бекзат пен келініміз Дананың үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
-    <div class="line"></div>
+    <h1 class="fade-in">Құрметті қонақтар!</h1>
+    <p class="fade-in">Сіздерді баламыз Бекзат пен келініміз Дананың үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+    <div class="fade-in line"></div>
     <div class="info-section">
       <div class="info-block">
-        <img src="pics/calendar.png" alt="calendar icon" />
+        <img class="fade-in" src="pics/calendar.png" alt="calendar icon" />
         <div class="info-text">
-          <div><strong>19 шілде 2025 жыл</strong></div>
-          <div>Сенбі, 17:00</div>
+          <div class="fade-in"><strong>19 шілде 2025 жыл</strong></div>
+          <div class="fade-in">Сенбі, 17:00</div>
         </div>
       </div>
       <div class="info-block">
-        <img src="pics/location.png" alt="location icon" />
+        <img class="fade-in" src="pics/location.png" alt="location icon" />
         <div class="info-text">
-          <div><strong>Банкет залы Samruk 777</strong></div>
-          <div>Бейімбет Майлин к., 20/10</div>
+          <div class="fade-in"><strong>Банкет залы Samruk 777</strong></div>
+          <div class="fade-in">Бейімбет Майлин к., 20/10</div>
         </div>
       </div>
     </div>
@@ -46,19 +47,20 @@
   <section class="section3">
     <div class="overlay"></div>
     <div class="section3-content">
-      <h3>Той иелері</h3>
-      <h2 class="section3-name">Ардақ - Тамара</h2>
+      <h3 class="fade-in">Той иелері</h3>
+      <h2 class="fade-in section3-name">Ардақ - Тамара</h2>
+      <img src="pics/line.png" alt="line" class="line-image fade-in">
     </div>
   </section>
 
   <section class="section4" style="font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz';">
-    <p style="font-size: 22px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
+    <p class="fade-in" style="font-size: 22px; font-weight: bold;">Тойға қатысуыңызды растауыңызды сұраймыз</p>
     <form id="rsvp-form">
-      <input type="text" name="entry.763296163" placeholder="Аты-жөніңіз" required />
-      <input type="text" name="entry.1810413915" placeholder="Неше адам" required />
-      <label><input type="radio" name="entry.1818277347" value="Қатысамыз" required /> Қатысамыз</label>
-      <label><input type="radio" name="entry.1818277347" value="Келе алмаймыз" /> Келе алмаймыз</label>
-      <button type="submit">Жіберу</button>
+      <input class="fade-in" type="text" name="entry.763296163" placeholder="Аты-жөніңіз" required />
+      <input class="fade-in" type="text" name="entry.1810413915" placeholder="Неше адам" required />
+      <label class="fade-in"><input class="fade-in" type="radio" name="entry.1818277347" value="Қатысамыз" required /> Қатысамыз</label>
+      <label class="fade-in"><input class="fade-in" type="radio" name="entry.1818277347" value="Келе алмаймыз" /> Келе алмаймыз</label>
+      <button class="fade-in" type="submit">Жіберу</button>
     </form>
     <p id="confirmation" style="color: green; display: none;">Рақмет! Жауабыңыз қабылданды.</p>
   </section>
@@ -70,7 +72,7 @@
 
 <section class="section5">
   <!-- Контейнер карты -->
-  <div id="map" style="width: 100%; height: 400px;"></div>
+  <div class="fade-in" id="map" style="width: 100%; height: 400px;"></div>
 </section>
 
 <script>
@@ -86,6 +88,24 @@
     });
 
     myMap.geoObjects.add(myPlacemark);
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Убираем, если не хотим повторного появления
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  // Находим все элементы с классом fade-in
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
   });
 </script>
 
@@ -153,5 +173,65 @@
     });
   });
   </script>
+
+
+<audio id="background-music" src="music/music1.mp3" autoplay loop></audio>
+
+<!-- Кнопка управления -->
+<button id="music-toggle" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000;
+">⏸️</button>
+
+<script>
+  const music = document.getElementById("background-music");
+  const toggleBtn = document.getElementById("music-toggle");
+  let hasInteracted = false;
+
+  function updateButton() {
+    toggleBtn.textContent = music.paused ? "▶️" : "⏸️";
+  }
+
+  toggleBtn.addEventListener("click", function () {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+    updateButton();
+  });
+
+  function tryAutoPlay() {
+    if (!hasInteracted) {
+      hasInteracted = true;
+      music.play().then(updateButton).catch(err => {
+        console.log("Autoplay blocked:", err);
+      });
+      // Можно удалить обработчик после первого запуска
+      window.removeEventListener("scroll", tryAutoPlay);
+      window.removeEventListener("touchstart", tryAutoPlay);
+    }
+  }
+
+  // Запускаем музыку при первом скролле или касании (на телефоне)
+  window.addEventListener("scroll", tryAutoPlay, { once: true });
+  window.addEventListener("touchstart", tryAutoPlay, { once: true });
+
+  document.addEventListener("DOMContentLoaded", updateButton);
+
+  window.addEventListener("beforeunload", () => {
+    music.pause();
+  });
+</script>
+
 </body>
 </html>
