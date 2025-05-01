@@ -272,7 +272,7 @@ body {
   display: block;
   margin: 20px auto;
   max-width: 300px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
 }
 
@@ -283,7 +283,7 @@ body {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz', sans-serif;
 }
 
